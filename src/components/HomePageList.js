@@ -1,5 +1,5 @@
 import React from "react";
-import HomePageCard from "./HomePageCards";
+import HomePageCard from "./HomePageCard";
 
 const HomePageList = ({ cards }) => {
     return(
