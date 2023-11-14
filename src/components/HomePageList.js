@@ -5,7 +5,7 @@ const HomePageList = ({ cards }) => {
     return(
         <div>
             {cards.map(card => (
-                <HomePageCard id={card.id} cardDate={card}/>
+                <HomePageCard id={card.id} cardData={card}/>
                 )
             )}
         </div>
