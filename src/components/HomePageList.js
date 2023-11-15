@@ -1,5 +1,6 @@
 import React from "react";
 import HomePageCard from "./HomePageCard";
+import gif from "./gif";
 
 const HomePageList = ({ cards }) => {
     return(

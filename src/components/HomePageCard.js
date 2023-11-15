@@ -1,5 +1,6 @@
 import React from "react";
 import '../styles/Card.css';
+import gif from "./gif";
 
 const HomePageCard = ({ cardData }) => {
     return(
