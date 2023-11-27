@@ -4,9 +4,9 @@ import gif from "./HomePageGif";
 
 const HomePageCard = ({ cardData }) => {
     return(
-        <div className="container">
+        <div className="homeCard">
             <h1>{cardData.header}</h1>
-            <h2>{cardData.info}</h2>
+            <p>{cardData.info}</p>
         </div>
     );
 }

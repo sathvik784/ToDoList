@@ -1,5 +1,7 @@
 import './App.css';
 import HomePageList from './components/HomePageList';
+import HomePageCard from './components/HomePageCard';
+import './styles/Card.css'
 
 const benefitsInfo = [
   {

@@ -2,15 +2,17 @@ import React from "react";
 import HomePageCard from "./HomePageCard";
 import gif from "./HomePageGif";
 import Navbar from "./HomePageNavBar";
+import '../styles/Card.css';
 
 const HomePageList = ({ cards }) => {
     return(
-        <div>
+        <ul>
             {cards.map(card => (
-                <HomePageCard id={card.id} cardData={card}/>
+                <HomePageCard class = "homeCard" id={card.id} cardData={card}/>
                 )
             )}
-        </div>
+      </ul>
+   
     );
 }
 
