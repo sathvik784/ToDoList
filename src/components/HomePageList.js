@@ -1,7 +1,5 @@
 import React from "react";
 import HomePageCard from "./HomePageCard";
-import gif from "./HomePageGif";
-import Navbar from "./HomePageNavBar";
 import '../styles/Card.css';
 
 const HomePageList = ({ cards }) => {

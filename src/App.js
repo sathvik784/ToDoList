@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import './App.css';
 import HomePageList from './components/HomePageList';
 import HomePageCard from './components/HomePageCard';
@@ -17,30 +18,23 @@ const benefitsInfo = [
   }
 ]
 
+=======
+import Home from './components/Home';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import TempNavbar from './components/TempNavbar';
+import ListPage from './components/ListPage';
+>>>>>>> 1638700f149d34027bceeeb886678bc5dcf83370
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="data:image/png;base64,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" className="notes-logo" alt="notes" />
-
-        <h1 id='title'>
-          To-Do List
-        </h1>
-
-        <button id='login-button'>
-          Sign In
-        </button>
-
-        <h2 id='blurb'>
-          A place to keep track of all your assignments and events neatly.
-        </h2>
-
-        <div class="container">
-          <HomePageList cards={benefitsInfo}/>
-        </div>
-      </header>
-    </div>
+    
+    <Router>
+      <TempNavbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/listpage' element={<ListPage />} />
+      </Routes>
+    </Router>
   );
 }
 
