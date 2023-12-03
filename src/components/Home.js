@@ -3,13 +3,12 @@ import '../styles/App.css';
 import benefitsInfo from './benefitsInfo';
 import HomePageList from './HomePageList';
 import gif from './HomePageGif';
+import '../styles/Home.css'
 
 function Home() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={gif} className="notes-logo" alt="notes" />
-
         <h1 id='title'>
           To-Do List
         </h1>

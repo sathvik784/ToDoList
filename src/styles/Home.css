@@ -1,0 +1,12 @@
+#login-button{
+ background-color: rgb(222, 72, 58);
+ color: #FFFFFF;
+ align-items: center;
+border-radius: 10px;
+border-color: #FFFFFF;
+box-shadow: none;
+}
+
+#h1{
+ font-size: 20px;
+}

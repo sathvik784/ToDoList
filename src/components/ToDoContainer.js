@@ -42,8 +42,7 @@ const ToDoContainer = () => {
     }
 
     return(
-        <div style={{ margin: 20 }}>
-            <h1 align='center'>Todo container</h1>
+        <div className='container'>
             {todos.map(todo => (
                 <ToDoComponent key={todo.id} event={todo} removeTodo={handleRemoveTodo} checkEvent={handleCheckTodo} />
                 )

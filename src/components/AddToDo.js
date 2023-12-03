@@ -13,15 +13,13 @@ const AddToDo = ({addTodo}) => {
    }
 
    return (
-        <div>
+        <div className='taskCard'>
             <form onSubmit={handleSubmit}>
-                <input type='text' value={text} 
+                <input id = "addTaskText" type='text' value={text} 
                 onChange={(event)=>setText(event.target.value)}
                 placeholder='Add an assignment'
-                style={{position:'fixed', bottom: 20, width:'93%'}}/>
-                
-                
-                <input style={{position:'fixed', bottom: 20, right:20}} type='submit' />
+               />
+                <input id = "addTaskButton"type='submit' value={"+"} />
             </form>
         </div>
    );
