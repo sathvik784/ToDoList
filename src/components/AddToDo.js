@@ -1,13 +1,11 @@
 import {React, useState} from 'react'
 
 const AddToDo = ({addTodo}) => {
-
-
    const [text, setText] = useState("");
 
    const handleSubmit = (e) => {
         e.preventDefault()
-        const newAssignment={id: Math.random(), assignment: text, done: false}
+        const newAssignment={id: Math.random(), task: text, done: false}
         addTodo(newAssignment)
         setText("")
    }
