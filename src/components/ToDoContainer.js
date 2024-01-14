@@ -3,9 +3,7 @@ import ToDoComponent from "./ToDoComponent";
 import AddToDo from "./AddToDo";
 import { useEffect } from 'react';
 
-const listData = await fetch('http://127.0.0.1:8000/todolist/tasks')
-
-
+const tmp_id = null
 const ToDoContainer = () => {
 
     const [todos, setTodos] = useState([]);
@@ -26,9 +24,9 @@ const ToDoContainer = () => {
           const mappedData = data.all_tasks.map(task => ({
             id: task.id,
             task: task.task, // Adjust property names based on your actual data structure
-            done: task.done
+            done: task.done,
           }));
-    
+          
           setTodos(mappedData);
         } else {
           console.error('Received empty or unexpected data from the API');
@@ -45,12 +43,13 @@ const ToDoContainer = () => {
     const handleAddTodo = async (newTodo) => {
          const updatedTodoList = [...todos, newTodo]
          setTodos(updatedTodoList)
-
+        
          // URL where you want to make the POST request
           const url = 'http://127.0.0.1:8000/todolist/add_tasks'; //
 
           // Data to be sent in the request body (can be a JSON object, FormData, etc.)
           const data = {
+            //id: 1,
             task: newTodo,
             done: false
           };
@@ -76,9 +75,11 @@ const ToDoContainer = () => {
               console.error('Error making POST request:', error);
               // Handle errors
             });
+            
     }
 
     const handleRemoveTodo = async (id) => {
+        console.log(id)
         const updatedTodoList = todos.filter(todo=>todo.id!==id)
         setTodos(updatedTodoList)
 
@@ -101,8 +102,7 @@ const ToDoContainer = () => {
             // Handle errors
           }
         }
-        await deleteTask(parseInt(id, 10));
-        fetchData();
+        await deleteTask(id);
     }
 
     const handleCheckTodo = (id) => {
