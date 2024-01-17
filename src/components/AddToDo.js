@@ -4,9 +4,11 @@ const AddToDo = ({addTodo}) => {
    const [text, setText] = useState("");
 
    const handleSubmit = async (e) => {
+        e.preventDefault()
         const newAssignment={id: Math.random(), task: text, done: false}
         addTodo(newAssignment)
         setText("")
+        return true
    }
 
    return (
