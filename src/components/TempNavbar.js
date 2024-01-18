@@ -12,6 +12,7 @@ function TempNavbar() {
                 <li>
                     <Link to='/listpage'>ListPage</Link>
                 </li>
+                
             </ul>
         </nav>
     );
