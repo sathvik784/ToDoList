@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ListPage from './ListPage';
-import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 //import '../styles/Login.css'
 import '../styles/Register.css';
 import '../styles/Register.css';
@@ -26,6 +26,7 @@ const Register = () => {
         // URL where you want to make the POST request
         const url = 'http://127.0.0.1:8000/account/register/'; 
 
+        console.log(username)
         const data = {
           username: username,
           email: email,
@@ -56,7 +57,6 @@ const Register = () => {
             console.error('Error making registration request:', error);
             // Handle errors
           });
-
     };
     
     
@@ -111,7 +111,7 @@ const Register = () => {
             
             
             <Link to='/listpage' style={{ textDecoration: 'none' }}>
-              <button type="submit" style={signInButtonStyle}>
+              <button type="submit" style={signInButtonStyle} onClick={handleRegister}>
                 Register
               </button>
             </Link>
