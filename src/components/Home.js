@@ -13,8 +13,9 @@ function Home() {
         <h1 id='title'>
           To-Do List
         </h1>
-
-        <button id='login-button'> Sign In </button>
+        <Link to='/login'>
+          <button id='login-button'> Sign In </button>
+        </Link>
 
         <Link to='/register'>
           <button id='login-button'> Register </button>

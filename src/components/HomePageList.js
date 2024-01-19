@@ -9,7 +9,7 @@ const HomePageList = ({ cards }) => {
                 <HomePageCard class = "homeCard" id={card.id} cardData={card}/>
                 )
             )}
-      </ul>
+        </ul>
    
     );
 }

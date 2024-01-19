@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Home from './Home';
-import { Link } from "react-router-dom";
+import ListPage from './ListPage';
+import { Redirect } from "react-router-dom";
 //import '../styles/Login.css'
     
 const Register = () => {
@@ -9,16 +9,12 @@ const Register = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [password2, setPassword2] = useState(""); 
-    const [isLoggedIn, setLoggedIn] = useState(false);
+    const [isRegistered, setRegistered] = useState(false);
     
     const handleRegister = () => {
         // URL where you want to make the POST request
         const url = 'http://127.0.0.1:8000/account/register/'; 
 
-        console.log(username)
-        console.log(email)
-        console.log(password)
-        console.log(password2)
         const data = {
           username: username,
           email: email,
@@ -42,7 +38,6 @@ const Register = () => {
           .then(data => {
             console.log('Registration request successful:', data);
             // Handle the response data as needed
-            //return <Home />;
             
           })
           
@@ -51,9 +46,8 @@ const Register = () => {
             // Handle errors
           });
 
-        
-        
     };
+    
     
     return (
         <div className="login-container">
