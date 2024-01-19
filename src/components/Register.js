@@ -3,6 +3,7 @@ import ListPage from './ListPage';
 import { Redirect } from "react-router-dom";
 //import '../styles/Login.css'
 import '../styles/Register.css';
+import '../styles/Register.css';
     
 const Register = () => {
 
