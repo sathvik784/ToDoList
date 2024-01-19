@@ -130,9 +130,9 @@ const Register = () => {
             </button>
 
             {isRegistered && (
-              <Link to='/listpage' style={{ textDecoration: 'none' }}>
+              <Link to='/login' style={{ textDecoration: 'none' }}>
                 <button type="button" style={signInButtonStyle}>
-                    Get Started!
+                    Login to Get Started!
                 </button>
               </Link>
             )}

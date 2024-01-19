@@ -1,8 +1,20 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
+
+    const signInButtonStyle = {
+      backgroundColor: '#006492',
+      color: 'white',
+      border: '1px solid #006492',
+      borderRadius: '5px',
+      padding: '10px 20px',
+      cursor: 'pointer',
+    };
+    
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [loggedIn, setLoggedIn] = useState(false);
     
     const handleLogin = () => {
         // URL where you want to make the POST request
@@ -20,6 +32,7 @@ const Login = () => {
 
             // You can also include other headers if needed, like authorization headers
           },
+          credentials: 'include',
           body: JSON.stringify(data) // Convert data to JSON string for the request body
         };
 
@@ -29,6 +42,11 @@ const Login = () => {
           .then(data => {
             console.log('Registration request successful:', data);
             // Handle the response data as needed
+            console.log(data.jwt)
+            console.log(data)
+            if (data.jwt) {
+              setLoggedIn(true)
+            }
             
           })
           
@@ -62,9 +80,18 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
             />
-            <button type="button" onClick={handleLogin}>
-                Login
+            
+            <button type="submit" style={signInButtonStyle} onClick={handleLogin}>
+              Log In
             </button>
+
+            {loggedIn && (
+              <Link to='/listpage' style={{ textDecoration: 'none' }}>
+                <button type="button" onClick={handleLogin}>
+                  Get Started!
+                </button>
+              </Link>
+            )}
         </div>
     );
 };
