@@ -50,6 +50,9 @@ const Register = () => {
           .then(data => {
             console.log('Registration request successful:', data);
             // Handle the response data as needed
+            if (data.message === 'Account Registered') {
+              setRegistered(true)
+            }
             
           })
           
@@ -58,6 +61,19 @@ const Register = () => {
             // Handle errors
           });
     };
+
+    /*
+    {isRegistered ? (
+         <Link to='/listpage' style={{ textDecoration: 'none' }}>
+            <button type="submit" style={signInButtonStyle} onClick={handleRegister}>
+                Register
+              </button>
+        </Link>
+    ) : (
+      <button type="submit" style={signInButtonStyle} onClick={handleRegister}>
+          Register
+      </button>
+    */
     
     
     return (
@@ -109,12 +125,19 @@ const Register = () => {
                 required
             />
             
+            <button type="submit" style={signInButtonStyle} onClick={handleRegister}>
+              Register
+            </button>
+
+            {isRegistered && (
+              <Link to='/listpage' style={{ textDecoration: 'none' }}>
+                <button type="button" style={signInButtonStyle}>
+                    Get Started!
+                </button>
+              </Link>
+            )}
             
-            <Link to='/listpage' style={{ textDecoration: 'none' }}>
-              <button type="submit" style={signInButtonStyle} onClick={handleRegister}>
-                Register
-              </button>
-            </Link>
+            
             
         </div>
     );
