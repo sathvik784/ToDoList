@@ -2,8 +2,19 @@ import React, { useState } from "react";
 import Home from './Home';
 import { Link } from "react-router-dom";
 //import '../styles/Login.css'
+import '../styles/Register.css';
     
 const Register = () => {
+
+
+  const signInButtonStyle = {
+    backgroundColor: '#006492',
+    color: 'white',
+    border: '1px solid #006492',
+    borderRadius: '5px',
+    padding: '10px 20px',
+    cursor: 'pointer',
+  };
 
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -105,8 +116,11 @@ const Register = () => {
             />
             
             
-            <button type="button" onClick={handleRegister}> Register </button>
-            
+<Link to='/listpage' style={{ textDecoration: 'none' }}>
+    <button type="submit" style={signInButtonStyle}>
+      Register
+    </button>
+  </Link>            
             
         </div>
     );
